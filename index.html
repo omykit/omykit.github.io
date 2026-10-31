@@ -44,17 +44,20 @@ a{color:inherit}
 .nav ul a:hover{color:var(--text)}
 
 .hero{min-height:min(80vh,740px);display:flex;flex-direction:column;justify-content:center;padding-top:32px;padding-bottom:96px}
-.hero > div{max-width:560px}
+.hero > div{max-width:520px}
 .status{display:inline-flex;align-items:center;gap:10px;font:13px var(--mono);color:var(--green);border:1px solid rgba(52,214,161,.35);background:rgba(10,17,32,.6);padding:6px 12px;border-radius:999px;margin-bottom:28px}
 .status i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(52,214,161,.6);animation:pulse 2.4s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,214,161,.55)}70%{box-shadow:0 0 0 9px rgba(52,214,161,0)}100%{box-shadow:0 0 0 0 rgba(52,214,161,0)}}
 .prompt{font:15px var(--mono);color:var(--dim);margin:0 0 6px}
 .prompt b{color:var(--blue);font-weight:500}
-.hero h1{font-size:clamp(48px,6.6vw,88px);line-height:.96;letter-spacing:-.04em;font-weight:800;margin:0 0 18px}
-.typed{font:500 clamp(17px,1.9vw,21px) var(--mono);color:var(--blue);margin:0 0 20px;min-height:1.6em}
+.hero h1{font-size:clamp(34px,3.8vw,52px);line-height:1.05;letter-spacing:-.03em;font-weight:800;margin:0 0 10px}
+.typed{font:500 clamp(15px,1.5vw,18px) var(--mono);color:var(--blue);margin:0 0 22px;min-height:1.6em}
 .typed .cur{display:inline-block;width:.6em;height:1.1em;background:var(--blue);vertical-align:-.15em;margin-left:2px;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-.lede{font-size:19px;line-height:1.55;color:#C6D0E2;max-width:36ch;margin:0 0 32px}
+.lede{font-size:17px;line-height:1.6;color:#C6D0E2;max-width:42ch;margin:0 0 24px}
+.details{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0 0 30px;padding:16px 18px;border:1px solid var(--line);border-left:2px solid var(--blue);border-radius:10px;background:rgba(10,17,32,.55);font-size:14.5px;max-width:460px}
+.details dt{font-family:var(--mono);color:var(--dim)}
+.details dd{margin:0;color:var(--text)}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid var(--line2);color:var(--text);background:rgba(15,26,46,.7);cursor:pointer;font-family:var(--sans)}
 .btn svg{width:17px;height:17px;fill:currentColor}
@@ -67,11 +70,13 @@ section.block{padding:96px 0;border-bottom:1px solid var(--line)}
 .head{display:flex;align-items:baseline;gap:16px;margin:0 0 44px;flex-wrap:wrap}
 .head h2{font-size:clamp(30px,3.6vw,46px);letter-spacing:-.03em;line-height:1.05;margin:0;font-weight:700}
 .head .path{font:14px var(--mono);color:var(--blue)}
-.intro{color:var(--muted);max-width:60ch;margin:-24px 0 44px}
+.intro{color:#C6D0E2;font-size:18px;max-width:62ch;margin:-20px 0 48px}
 
 /* demo */
 .demo-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
 .demo-grid p{color:var(--muted);max-width:46ch;margin:0}
+.try{margin-top:72px;padding-top:56px;border-top:1px solid var(--line)}
+.sub{font-size:24px;letter-spacing:-.02em;line-height:1.25;margin:0 0 14px}
 .router{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .router .bar{display:flex;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--line);font:12.5px var(--mono);color:var(--dim);background:var(--surface2)}
 .router .body{padding:20px}
@@ -139,6 +144,23 @@ section.block{padding:96px 0;border-bottom:1px solid var(--line)}
 .code pre span.l::before{counter-increment:ln;content:counter(ln);display:inline-block;width:64px;padding-right:18px;text-indent:0;text-align:right;color:var(--dim);opacity:.6}
 .k{color:#8FB3FF}.s{color:#9BE3C6}.p{color:var(--dim)}
 
+
+/* skills boxes */
+.stackwrap{font-family:var(--mono)}
+.brace{margin:0;font-size:16px}
+.brace:first-child{margin-bottom:16px}
+.brace:last-child{margin-top:16px}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;padding-left:22px;border-left:1px dashed var(--line2)}
+.sbox{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.sbox:hover{border-color:var(--line2)}
+.sbox .bar{display:flex;justify-content:space-between;padding:8px 14px;border-bottom:1px solid var(--line);font-size:12px;color:var(--dim);background:var(--surface2)}
+.sbox ol{margin:0;padding:12px 14px 14px 0;list-style:none;counter-reset:ln;font-size:13.5px;line-height:1.85}
+.sbox li{counter-increment:ln;padding-left:38px;text-indent:-38px}
+.sbox li::before{content:counter(ln);display:inline-block;width:38px;padding-right:14px;text-indent:0;box-sizing:border-box;text-align:right;color:var(--dim);opacity:.55}
+.sbox li.in{padding-left:calc(38px + 2ch);text-indent:calc(-38px - 2ch)}
+.sbox li.in::before{width:calc(38px + 2ch);padding-right:calc(14px + 2ch)}
+@media (max-width:480px){.sgrid{padding-left:12px}}
+
 /* research */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .cell{border:1px solid var(--line);border-radius:12px;padding:24px;background:var(--surface)}
@@ -163,10 +185,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   .repos{grid-template-columns:1fr}
   .facts{grid-template-columns:1fr 1fr}
   .nav ul{display:none}
-  .photo{width:100%;background-position:center 18%}
-  .photo::after{background:linear-gradient(0deg,var(--bg) 6%,rgba(10,17,32,.85) 45%,rgba(10,17,32,.25) 80%)}
+  .photo{width:100%;bottom:auto;height:min(62vh,520px);background-position:center 20%}
+  .photo::after{background:linear-gradient(0deg,var(--bg) 0%,rgba(10,17,32,.55) 30%,rgba(10,17,32,.1) 60%,rgba(10,17,32,.35) 100%)}
   .grid{-webkit-mask-image:linear-gradient(0deg,#000,transparent 60%);mask-image:linear-gradient(0deg,#000,transparent 60%)}
-  .hero{min-height:90vh;justify-content:flex-end;padding-bottom:56px}
+  .hero{min-height:0;justify-content:flex-start;padding-top:min(44vh,370px);padding-bottom:56px}
 }
 @media (max-width:480px){
   .wrap{padding-left:20px;padding-right:20px}
@@ -210,7 +232,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <p class="prompt"><b>$</b> whoami</p>
       <h1>Omair Kittur</h1>
       <p class="typed" aria-label="Full-Stack AI Engineer"><span id="typed">Full-Stack AI Engineer</span><span class="cur"></span></p>
-      <p class="lede">I build AI applications end to end: the model routing, the backend, and the app people actually use. BCA in Artificial Intelligence, based in Kuwait.</p>
+      <p class="lede">I build AI applications end to end: the model routing, the backend, and the app people actually use.</p>
+      <dl class="details">
+        <dt>based in</dt><dd>Kuwait</dd>
+        <dt>degree</dt><dd>BCA, Artificial Intelligence</dd>
+        <dt>building</dt><dd>FastAPI microservices, local LLMs, React Native apps</dd>
+        <dt>research</dt><dd>Agentic AI paper, IJSREM 2025</dd>
+      </dl>
       <div class="actions">
         <a class="btn primary" href="#contact">Get in touch</a>
         <a class="btn" href="https://github.com/omykit" target="_blank" rel="noopener"><svg><use href="#gh"/></svg>GitHub</a>
@@ -222,43 +250,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 <main>
 
-<section class="block" id="demo" aria-labelledby="demo-h">
-  <div class="wrap demo-grid">
-    <div>
-      <div class="head"><h2 id="demo-h">How Jarvis decides</h2></div>
-      <p>My main project routes every request before it reaches a model. Known commands, like opening an app or asking the time in another city, run directly. Open-ended questions go to a local Qwen model through Ollama, and its answers pass a guardrail that blocks made-up times and dates.</p>
-    </div>
-    <div class="router">
-      <div class="bar"><span>gateway/route</span><span>try it</span></div>
-      <div class="body">
-        <form id="rform">
-          <label for="rin" class="sr">Request</label>
-          <input id="rin" autocomplete="off" value="open youtube">
-          <button type="submit">Route it</button>
-        </form>
-        <div class="chips" aria-label="Example requests">
-          <button type="button">what time is it in London?</button>
-          <button type="button">explain how RAG works</button>
-          <button type="button">create a folder called notes</button>
-        </div>
-        <div class="flow" aria-hidden="true">
-          <div class="node" id="n-gw"><b>Gateway</b>parse + route</div>
-          <div class="arrows"><span class="arrow" id="a-cmd">→</span><span class="arrow" id="a-ai">→</span></div>
-          <div class="targets">
-            <div class="node" id="n-cmd"><b>Command service</b>no LLM call</div>
-            <div class="node" id="n-ai"><b>AI service</b>local Qwen (Ollama)</div>
-          </div>
-        </div>
-        <div class="verdict" id="verdict" aria-live="polite"></div>
-        <p class="fine">A simplified, in-browser illustration. The real router runs in Jarvis's FastAPI Gateway service.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="block" id="work" aria-labelledby="work-h">
   <div class="wrap">
     <div class="head"><span class="path">~/work</span><h2 id="work-h">Selected work</h2></div>
+    <p class="intro">My flagship project is J.A.R.V.I.S, a voice assistant I first built for my own Windows PC and then rebuilt as a set of backend services. It's the project I'm most proud of, and the one that taught me the most about building AI systems that actually hold up.</p>
 
     <div class="feature">
       <div>
@@ -307,7 +302,41 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       </figure>
     </div>
 
-    <div class="repos">
+    <div class="demo-grid try">
+      <div>
+        <h3 class="sub">Try it: how Jarvis handles a request</h3>
+        <p>When you speak to Jarvis, the request first goes to the gateway service. If it's a known command, like opening an app or asking the time in another city, Jarvis runs it directly. That's faster, and there's no chance of a made-up answer. Anything open-ended goes to the local Qwen model, and its reply passes a guardrail before Jarvis speaks it.</p>
+        <p style="margin-top:14px">Type a request, or tap an example, to see which path it takes.</p>
+      </div>
+      <div class="router">
+      <div class="bar"><span>gateway/route</span><span>try it</span></div>
+      <div class="body">
+        <form id="rform">
+          <label for="rin" class="sr">Request</label>
+          <input id="rin" autocomplete="off" value="open youtube">
+          <button type="submit">Route it</button>
+        </form>
+        <div class="chips" aria-label="Example requests">
+          <button type="button">what time is it in London?</button>
+          <button type="button">explain how RAG works</button>
+          <button type="button">create a folder called notes</button>
+        </div>
+        <div class="flow" aria-hidden="true">
+          <div class="node" id="n-gw"><b>Gateway</b>parse + route</div>
+          <div class="arrows"><span class="arrow" id="a-cmd">→</span><span class="arrow" id="a-ai">→</span></div>
+          <div class="targets">
+            <div class="node" id="n-cmd"><b>Command service</b>no LLM call</div>
+            <div class="node" id="n-ai"><b>AI service</b>local Qwen (Ollama)</div>
+          </div>
+        </div>
+        <div class="verdict" id="verdict" aria-live="polite"></div>
+        <p class="fine">A simplified, in-browser illustration. The real router runs in Jarvis's FastAPI Gateway service.</p>
+      </div>
+    </div>
+    </div>
+
+    <h3 class="sub" style="margin:88px 0 0">Other projects</h3>
+    <div class="repos" style="margin-top:24px">
       <article class="repo">
         <div class="rp"><svg><use href="#repo"/></svg>omykit/Jarvis-Desktop-Voice-Assistant-Primary</div>
         <h3>Jarvis desktop voice assistant</h3>
@@ -379,9 +408,39 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <section class="block" id="skills" aria-labelledby="skills-h">
   <div class="wrap">
     <div class="head"><span class="path">~/skills</span><h2 id="skills-h">What I work with</h2></div>
-    <div class="code">
-      <div class="bar"><span>stack.json</span><span>JSON</span></div>
-<pre><span class="l"><span class="p">{</span></span><span class="l">  <span class="k">"ai"</span><span class="p">:</span> <span class="p">[</span><span class="s">"Ollama"</span>, <span class="s">"local LLMs"</span>, <span class="s">"OpenAI-compatible APIs"</span>, <span class="s">"request routing"</span>, <span class="s">"output guardrails"</span>, <span class="s">"speech-to-text"</span>, <span class="s">"text-to-speech"</span><span class="p">],</span></span><span class="l">  <span class="k">"backend"</span><span class="p">:</span> <span class="p">[</span><span class="s">"Python"</span>, <span class="s">"FastAPI"</span>, <span class="s">"Node.js"</span>, <span class="s">"Express"</span>, <span class="s">"REST API design"</span><span class="p">],</span></span><span class="l">  <span class="k">"frontend"</span><span class="p">:</span> <span class="p">[</span><span class="s">"React Native (Expo)"</span>, <span class="s">"React"</span>, <span class="s">"JavaScript"</span>, <span class="s">"HTML/CSS"</span>, <span class="s">"Tkinter"</span><span class="p">],</span></span><span class="l">  <span class="k">"data"</span><span class="p">:</span> <span class="p">[</span><span class="s">"PostgreSQL (Neon)"</span>, <span class="s">"MySQL"</span>, <span class="s">"SQLAlchemy"</span>, <span class="s">"pandas"</span>, <span class="s">"scikit-learn"</span><span class="p">],</span></span><span class="l">  <span class="k">"devops"</span><span class="p">:</span> <span class="p">[</span><span class="s">"Docker"</span>, <span class="s">"Docker Compose"</span>, <span class="s">"GitHub Actions"</span>, <span class="s">"Git"</span>, <span class="s">"pytest"</span><span class="p">],</span></span><span class="l">  <span class="k">"security"</span><span class="p">:</span> <span class="p">[</span><span class="s">"JWT"</span>, <span class="s">"bcrypt"</span>, <span class="s">"input validation"</span><span class="p">],</span></span><span class="l">  <span class="k">"languages"</span><span class="p">:</span> <span class="p">[</span><span class="s">"Python"</span>, <span class="s">"JavaScript"</span>, <span class="s">"SQL"</span>, <span class="s">"Java"</span><span class="p">]</span></span><span class="l"><span class="p">}</span></span></pre>
+    <div class="stackwrap">
+      <p class="brace"><span class="k">My_Tech_Stack</span> <span class="p">{</span></p>
+      <div class="sgrid">
+        <div class="sbox">
+          <div class="bar"><span>ai</span><span>7 items</span></div>
+          <ol><li><span class="k">"ai"</span><span class="p">: [</span></li><li class="in"><span class="s">"Ollama"</span><span class="p">,</span></li><li class="in"><span class="s">"local LLMs"</span><span class="p">,</span></li><li class="in"><span class="s">"OpenAI-compatible APIs"</span><span class="p">,</span></li><li class="in"><span class="s">"request routing"</span><span class="p">,</span></li><li class="in"><span class="s">"output guardrails"</span><span class="p">,</span></li><li class="in"><span class="s">"speech-to-text"</span><span class="p">,</span></li><li class="in"><span class="s">"text-to-speech"</span></li><li><span class="p">]</span></li></ol>
+        </div>
+        <div class="sbox">
+          <div class="bar"><span>backend</span><span>5 items</span></div>
+          <ol><li><span class="k">"backend"</span><span class="p">: [</span></li><li class="in"><span class="s">"Python"</span><span class="p">,</span></li><li class="in"><span class="s">"FastAPI"</span><span class="p">,</span></li><li class="in"><span class="s">"Node.js"</span><span class="p">,</span></li><li class="in"><span class="s">"Express"</span><span class="p">,</span></li><li class="in"><span class="s">"REST API design"</span></li><li><span class="p">]</span></li></ol>
+        </div>
+        <div class="sbox">
+          <div class="bar"><span>frontend</span><span>5 items</span></div>
+          <ol><li><span class="k">"frontend"</span><span class="p">: [</span></li><li class="in"><span class="s">"React Native (Expo)"</span><span class="p">,</span></li><li class="in"><span class="s">"React"</span><span class="p">,</span></li><li class="in"><span class="s">"JavaScript"</span><span class="p">,</span></li><li class="in"><span class="s">"HTML/CSS"</span><span class="p">,</span></li><li class="in"><span class="s">"Tkinter"</span></li><li><span class="p">]</span></li></ol>
+        </div>
+        <div class="sbox">
+          <div class="bar"><span>data</span><span>5 items</span></div>
+          <ol><li><span class="k">"data"</span><span class="p">: [</span></li><li class="in"><span class="s">"PostgreSQL (Neon)"</span><span class="p">,</span></li><li class="in"><span class="s">"MySQL"</span><span class="p">,</span></li><li class="in"><span class="s">"SQLAlchemy"</span><span class="p">,</span></li><li class="in"><span class="s">"pandas"</span><span class="p">,</span></li><li class="in"><span class="s">"scikit-learn"</span></li><li><span class="p">]</span></li></ol>
+        </div>
+        <div class="sbox">
+          <div class="bar"><span>devops</span><span>5 items</span></div>
+          <ol><li><span class="k">"devops"</span><span class="p">: [</span></li><li class="in"><span class="s">"Docker"</span><span class="p">,</span></li><li class="in"><span class="s">"Docker Compose"</span><span class="p">,</span></li><li class="in"><span class="s">"GitHub Actions"</span><span class="p">,</span></li><li class="in"><span class="s">"Git"</span><span class="p">,</span></li><li class="in"><span class="s">"pytest"</span></li><li><span class="p">]</span></li></ol>
+        </div>
+        <div class="sbox">
+          <div class="bar"><span>security</span><span>3 items</span></div>
+          <ol><li><span class="k">"security"</span><span class="p">: [</span></li><li class="in"><span class="s">"JWT"</span><span class="p">,</span></li><li class="in"><span class="s">"bcrypt"</span><span class="p">,</span></li><li class="in"><span class="s">"input validation"</span></li><li><span class="p">]</span></li></ol>
+        </div>
+        <div class="sbox">
+          <div class="bar"><span>languages</span><span>4 items</span></div>
+          <ol><li><span class="k">"languages"</span><span class="p">: [</span></li><li class="in"><span class="s">"Python"</span><span class="p">,</span></li><li class="in"><span class="s">"JavaScript"</span><span class="p">,</span></li><li class="in"><span class="s">"SQL"</span><span class="p">,</span></li><li class="in"><span class="s">"Java"</span></li><li><span class="p">]</span></li></ol>
+        </div>
+      </div>
+      <p class="brace"><span class="p">}</span></p>
     </div>
   </div>
 </section>
